@@ -1,0 +1,38 @@
+[
+    {
+        "id": "stat-1",
+        "url": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600",
+        "likes": "1.2k",
+        "comments": "45"
+    },
+    {
+        "id": "stat-2",
+        "url": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=600",
+        "likes": "850",
+        "comments": "32"
+    },
+    {
+        "id": "stat-3",
+        "url": "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=600",
+        "likes": "2.1k",
+        "comments": "89"
+    },
+    {
+        "id": "stat-4",
+        "url": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600",
+        "likes": "1.5k",
+        "comments": "56"
+    },
+    {
+        "id": "stat-5",
+        "url": "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=600",
+        "likes": "920",
+        "comments": "28"
+    },
+    {
+        "id": "stat-6",
+        "url": "https://images.unsplash.com/photo-1465495910483-0d6749ee997b?auto=format&fit=crop&q=80&w=600",
+        "likes": "1.8k",
+        "comments": "64"
+    }
+]

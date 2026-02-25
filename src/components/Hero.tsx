@@ -2,65 +2,77 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=2000" 
-          alt="Wedding Hero" 
+    <section id="home" className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-stone-900">
+      {/* Background Image with subtle zoom */}
+      <motion.div
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 10, ease: "easeOut" }}
+        className="absolute inset-0 z-0"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=85&w=2000"
+          alt="Wedding Hero"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-black/30" />
-      </div>
+        {/* Multi-layered overlay for depth and readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/60" />
+      </motion.div>
 
-      <div className="relative z-10 text-center px-4 max-w-4xl">
-        <motion.span 
+      <div className="relative z-10 text-center px-4 max-w-5xl">
+        <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-white/90 uppercase tracking-[0.3em] text-sm font-medium mb-4 block"
+          className="text-romantic-red uppercase tracking-[0.4em] text-xs md:text-sm font-bold mb-6 block drop-shadow-md"
         >
-          Capturing Timeless Love
+          Улавяме вечната любов
         </motion.span>
-        
-        <motion.h1 
+
+        <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-5xl md:text-8xl text-white font-serif mb-8 leading-tight"
+          className="text-5xl md:text-8xl lg:text-9xl text-white font-serif mb-8 leading-[1.1] drop-shadow-2xl"
         >
-          Your wedding is <br />
-          <span className="italic">important</span> to us.
+          Вашата сватба е <br />
+          <span className="italic relative inline-block">
+            важна
+            <svg className="absolute -bottom-2 md:-bottom-4 left-0 w-full h-2 md:h-4 text-romantic-red/40" viewBox="0 0 100 20" preserveAspectRatio="none">
+              <path d="M0 10 Q 50 0 100 10" stroke="currentColor" strokeWidth="2" fill="none" />
+            </svg>
+          </span> за нас.
         </motion.h1>
 
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed"
+          className="text-white/90 text-lg md:text-2xl max-w-3xl mx-auto mb-12 font-light leading-relaxed drop-shadow-lg"
         >
-          Are your guests like this? Joyful, teary-eyed, and dancing like nobody's watching. 
-          We don't just take photos; we preserve the soul of your celebration.
+          Ние не просто правим снимки. Ние съхраняваме Вашата история точно така, както я преживявате –
+          с цялото вълнение, сълзи от щастие и незабравими емоции.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
         >
-          <a href="#gallery" className="bg-white text-stone-900 px-10 py-4 rounded-full font-medium hover:bg-romantic-red hover:text-white transition-all duration-300">
-            View Our Work
+          <a href="#gallery" className="group relative bg-white text-stone-900 px-12 py-5 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:text-white shadow-2xl">
+            <span className="relative z-10 uppercase tracking-widest text-sm">Вижте нашето портфолио</span>
+            <div className="absolute inset-0 bg-romantic-red translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           </a>
-          <a href="#contact" className="border border-white text-white px-10 py-4 rounded-full font-medium hover:bg-white/10 transition-all duration-300">
-            Check Availability
+          <a href="#contact" className="px-12 py-5 rounded-full font-semibold border-2 border-white/30 text-white hover:bg-white/10 transition-all duration-300 backdrop-blur-sm uppercase tracking-widest text-sm">
+            Провери наличност
           </a>
         </motion.div>
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50"

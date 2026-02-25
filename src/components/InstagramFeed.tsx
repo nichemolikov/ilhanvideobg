@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Instagram, Heart, MessageCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { fetchInstagramPhotos, InstagramPost } from '../services/instagramService';
@@ -10,7 +10,10 @@ export default function InstagramFeed() {
   useEffect(() => {
     async function loadPosts() {
       setLoading(true);
-      const data = await fetchInstagramPhotos('https://www.instagram.com/ilhanvideobg/');
+      console.log("InstagramFeed: Fetching posts from Facebook...");
+      // Using Facebook as requested by the user for better reliability or as a preference
+      const data = await fetchInstagramPhotos('https://www.facebook.com/ilhanvideobg/photos');
+      console.log("InstagramFeed: Received data:", data);
       setPosts(data);
       setLoading(false);
     }
@@ -35,9 +38,9 @@ export default function InstagramFeed() {
           </div>
           <h2 className="text-4xl md:text-5xl font-serif">On Instagram</h2>
         </div>
-        <a 
-          href="https://www.instagram.com/ilhanvideobg/" 
-          target="_blank" 
+        <a
+          href="https://www.instagram.com/ilhanvideobg/"
+          target="_blank"
           rel="noopener noreferrer"
           className="text-stone-400 hover:text-romantic-red transition-colors flex items-center gap-2 group"
         >
@@ -51,8 +54,8 @@ export default function InstagramFeed() {
           {loading ? (
             // Skeleton Placeholders
             Array.from({ length: 6 }).map((_, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className="flex-none w-72 md:w-80 aspect-square bg-stone-100 rounded-2xl animate-pulse"
               />
             ))
@@ -63,9 +66,9 @@ export default function InstagramFeed() {
                 whileHover={{ y: -10 }}
                 className="flex-none w-72 md:w-80 aspect-square relative group rounded-2xl overflow-hidden snap-center shadow-sm"
               >
-                <img 
-                  src={post.url} 
-                  alt="Instagram Post" 
+                <img
+                  src={post.url}
+                  alt="Instagram Post"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
@@ -83,7 +86,7 @@ export default function InstagramFeed() {
             ))
           )}
         </div>
-        
+
         {/* Decorative background element */}
         <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full h-32 bg-romantic-blush/30 -z-10" />
       </div>

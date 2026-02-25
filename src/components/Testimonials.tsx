@@ -5,21 +5,33 @@ import { Testimonial } from '../types';
 const testimonials: Testimonial[] = [
   {
     id: '1',
-    name: 'Sarah & James',
-    text: 'Working with Ethereal Moments was the best decision we made for our wedding. They captured emotions we didn\'t even know we were showing. The photos are pure magic.',
-    date: 'October 2025'
+    name: 'Мария и Иван',
+    text: 'Работата с Илхан беше най-доброто решение за нашата сватба. Те уловиха емоции, за които дори не подозирахме. Снимките са истинска магия.',
+    date: 'Октомври 2025'
   },
   {
     id: '2',
-    name: 'Emily & Michael',
-    text: 'The video brought us to tears. It felt like a movie of our own lives. Professional, kind, and incredibly talented. We can\'t thank you enough!',
-    date: 'August 2025'
+    name: 'Елена и Михаил',
+    text: 'Видеото ни разплака. Чувствахме се като във филм за собствения ни живот. Професионално, любезно и невероятно талантливо отношение!',
+    date: 'Август 2025'
   },
   {
     id: '3',
-    name: 'Jessica & David',
-    text: 'They have an eye for the small details that make a wedding special. Every time we look at our album, we are transported back to that day.',
-    date: 'June 2025'
+    name: 'Йоана и Давид',
+    text: 'Имат невероятно око за малките детайли, които правят една сватба специална. Всеки път, когато гледаме албума си, се пренасяме обратно в онзи ден.',
+    date: 'Юни 2025'
+  },
+  {
+    id: '4',
+    name: 'Силвия и Калин',
+    text: 'Изключително висока летяща топка! Видеото надмина всичките ни очаквания. Енергията на празника е уловена перфектно.',
+    date: 'Май 2025'
+  },
+  {
+    id: '5',
+    name: 'Анна и Петър',
+    text: 'Благодарим за търпението и професионализма. Снимките са топли, живи и точно това, което си представяхме за нашия ден.',
+    date: 'Септември 2025'
   }
 ];
 
@@ -28,7 +40,7 @@ export default function Testimonials() {
     <section id="testimonials" className="py-24 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-serif mb-4">Kind Words</h2>
+          <h2 className="text-4xl md:text-6xl font-serif mb-4">Отзиви от нашите клиенти</h2>
           <div className="w-24 h-[1px] bg-romantic-red mx-auto" />
         </div>
 

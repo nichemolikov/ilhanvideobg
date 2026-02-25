@@ -15,10 +15,10 @@ export default function App() {
   return (
     <div className="min-h-screen selection:bg-romantic-red selection:text-white">
       <Navbar />
-      
+
       <main>
         <Hero />
-        
+
         {/* Intro Section */}
         <section className="py-24 px-4 bg-white">
           <div className="max-w-4xl mx-auto text-center">
@@ -33,11 +33,11 @@ export default function App() {
               </div>
             </motion.div>
             <h2 className="text-3xl md:text-5xl font-serif mb-8 leading-tight">
-              We capture the <span className="italic">unspoken</span> moments, the quiet glances, and the grand celebrations.
+              Улавяме <span className="italic">неизказаните</span> моменти, тихите погледи и големите празненства.
             </h2>
             <p className="text-stone-500 text-lg leading-relaxed max-w-2xl mx-auto">
-              Based in New York and available worldwide, we specialize in creating a visual legacy for couples who value artistry and authenticity. 
-              Whether it's a quiet elopement or a grand ballroom affair, we tell your story with a romantic, cinematic lens.
+              Базирани в България и проектиращи за целия свят, ние сме специализирани в създаването на визуално наследство за двойки, които ценят изкуството и автентичността.
+              Независимо дали става въпрос за тиха сватбена церемония или за грандиозно балско събитие, ние разказваме вашата история през романтичен и кинематографичен обектив.
             </p>
           </div>
         </section>
@@ -45,7 +45,7 @@ export default function App() {
         <InstagramFeed />
 
         <Gallery />
-        
+
         {/* Services / Video Section */}
         <section id="services" className="py-24 px-4 bg-stone-900 text-white overflow-hidden">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -54,40 +54,40 @@ export default function App() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="text-romantic-red uppercase tracking-widest text-sm font-semibold mb-4 block">Cinematography</span>
-              <h2 className="text-4xl md:text-6xl font-serif mb-8">Moving Memories</h2>
+              <span className="text-romantic-red uppercase tracking-widest text-sm font-semibold mb-4 block">Кинематография</span>
+              <h2 className="text-4xl md:text-6xl font-serif mb-8">Движещи се спомени</h2>
               <p className="text-stone-400 text-lg mb-10 leading-relaxed">
-                Our videography isn't just a recording of your day; it's a cinematic experience. 
-                We use high-end equipment and artistic editing to create a film that you'll want to watch every anniversary.
+                Нашата видеография не е просто запис на вашия ден; това е кинематографично изживяване.
+                Използваме висок клас оборудване и артистичен монтаж, за да създадем филм, който ще искате да гледате на всяка годишнина.
               </p>
               <ul className="space-y-4 mb-10">
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-romantic-red" />
-                  <span>4K Cinematic Highlight Films</span>
+                  <span>4K Кинематографични филми</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-romantic-red" />
-                  <span>Full Ceremony & Speeches Coverage</span>
+                  <span>Пълно отразяване на церемонията и речите</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-romantic-red" />
-                  <span>Drone Aerial Footage</span>
+                  <span>Въздушни кадри с дрон</span>
                 </li>
               </ul>
               <button className="bg-white text-stone-900 px-8 py-3 rounded-full font-medium hover:bg-romantic-red hover:text-white transition-all">
-                Explore Video Packages
+                Разгледайте видео пакетите
               </button>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="relative aspect-video rounded-3xl overflow-hidden group cursor-pointer"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1200" 
-                alt="Video Preview" 
+              <img
+                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1200"
+                alt="Video Preview"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
@@ -105,13 +105,13 @@ export default function App() {
         {/* Contact CTA */}
         <section id="contact" className="py-24 px-4 bg-romantic-red text-white">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-7xl font-serif mb-8">Let's create something <span className="italic">beautiful</span> together.</h2>
+            <h2 className="text-4xl md:text-7xl font-serif mb-8">Да създадем нещо <span className="italic">красиво</span> заедно.</h2>
             <p className="text-white/80 text-xl mb-12 font-light">
-              Currently booking for 2026 & 2027. Limited dates available.
+              В момента премаме резервации за 2026 и 2027 г. Ограничени свободни дати.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button className="bg-white text-romantic-red px-12 py-5 rounded-full text-lg font-semibold hover:bg-stone-900 hover:text-white transition-all shadow-xl">
-                Inquire Now
+                Запитване за дата
               </button>
             </div>
           </div>

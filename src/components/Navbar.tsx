@@ -13,13 +13,13 @@ export default function Navbar() {
             <Heart className="text-romantic-red w-6 h-6 fill-romantic-red" />
             <span className="font-serif text-2xl tracking-tight font-semibold uppercase">ILHAN VIDEO & PHOTO</span>
           </div>
-          
+
           <div className="hidden md:flex items-center space-x-8 text-sm uppercase tracking-widest font-medium">
-            <a href="#home" className="hover:text-romantic-red transition-colors">Home</a>
-            <a href="#gallery" className="hover:text-romantic-red transition-colors">Gallery</a>
-            <a href="#services" className="hover:text-romantic-red transition-colors">Services</a>
-            <a href="#testimonials" className="hover:text-romantic-red transition-colors">Kind Words</a>
-            <a href="#contact" className="bg-romantic-red text-white px-6 py-2 rounded-full hover:bg-stone-900 transition-all">Book Now</a>
+            <a href="#home" className="hover:text-romantic-red transition-colors">Начало</a>
+            <a href="#gallery" className="hover:text-romantic-red transition-colors">Галерия</a>
+            <a href="#services" className="hover:text-romantic-red transition-colors">Услуги</a>
+            <a href="#testimonials" className="hover:text-romantic-red transition-colors">Отзиви</a>
+            <a href="#contact" className="bg-romantic-red text-white px-6 py-2 rounded-full hover:bg-stone-900 transition-all font-semibold">Резервирай</a>
           </div>
 
           <div className="md:hidden">
@@ -32,16 +32,16 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden bg-white border-b border-stone-100 px-4 py-6 space-y-4 flex flex-col items-center text-center"
         >
-          <a href="#home" onClick={() => setIsOpen(false)} className="text-lg font-serif">Home</a>
-          <a href="#gallery" onClick={() => setIsOpen(false)} className="text-lg font-serif">Gallery</a>
-          <a href="#services" onClick={() => setIsOpen(false)} className="text-lg font-serif">Services</a>
-          <a href="#testimonials" onClick={() => setIsOpen(false)} className="text-lg font-serif">Kind Words</a>
-          <a href="#contact" onClick={() => setIsOpen(false)} className="bg-romantic-red text-white px-8 py-3 rounded-full w-full">Book Now</a>
+          <a href="#home" onClick={() => setIsOpen(false)} className="text-lg font-serif">Начало</a>
+          <a href="#gallery" onClick={() => setIsOpen(false)} className="text-lg font-serif">Галерия</a>
+          <a href="#services" onClick={() => setIsOpen(false)} className="text-lg font-serif">Услуги</a>
+          <a href="#testimonials" onClick={() => setIsOpen(false)} className="text-lg font-serif">Отзиви</a>
+          <a href="#contact" onClick={() => setIsOpen(false)} className="bg-romantic-red text-white px-8 py-3 rounded-full w-full font-semibold">Резервирай сега</a>
         </motion.div>
       )}
     </nav>
