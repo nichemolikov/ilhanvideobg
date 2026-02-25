@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Instagram, Heart, MessageCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { fetchInstagramPhotos, InstagramPost } from '../services/instagramService';
@@ -17,6 +17,8 @@ export default function InstagramFeed() {
     loadPosts();
   }, []);
 
+  const isLive = posts.length > 0 && !posts[0].url.includes('unsplash.com');
+
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -24,6 +26,12 @@ export default function InstagramFeed() {
           <div className="flex items-center gap-2 text-romantic-red mb-4">
             <Instagram size={20} />
             <span className="uppercase tracking-[0.2em] text-xs font-bold">Follow Our Journey</span>
+            {isLive && (
+              <span className="ml-2 px-2 py-0.5 bg-emerald-100 text-emerald-600 text-[10px] rounded-full flex items-center gap-1 animate-pulse">
+                <div className="w-1 h-1 rounded-full bg-emerald-600" />
+                LIVE FEED
+              </span>
+            )}
           </div>
           <h2 className="text-4xl md:text-5xl font-serif">On Instagram</h2>
         </div>

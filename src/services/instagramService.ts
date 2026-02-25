@@ -27,10 +27,19 @@ export async function fetchInstagramPhotos(profileUrl: string): Promise<Instagra
     const ai = new GoogleGenAI({ apiKey });
     
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
-      contents: `Find the latest 6 public posts from the Instagram profile: ${profileUrl}. Use Google Search if needed to find the most recent public images and their engagement stats. Return a JSON array of objects with keys: id, url, likes, comments. Ensure the URLs are direct image links that can be displayed in an <img> tag.`,
+      model: "gemini-3.1-pro-preview",
+      contents: `I need to display the 6 most recent public posts from the Instagram profile: ${profileUrl}. 
+      
+      Please use Google Search to find the actual public posts. 
+      For each post, I need:
+      1. A direct image URL (look for high-quality preview images or CDN links that are publicly accessible).
+      2. The number of likes (e.g., "1.2k").
+      3. The number of comments (e.g., "45").
+      
+      Return the data as a JSON array of objects. 
+      If you cannot find real images, do not return placeholders; instead, return an empty array so I can handle the fallback.`,
       config: {
-        tools: [{ urlContext: {} }, { googleSearch: {} }],
+        tools: [{ googleSearch: {} }],
         responseMimeType: "application/json",
         responseSchema: {
           type: Type.ARRAY,
@@ -49,9 +58,14 @@ export async function fetchInstagramPhotos(profileUrl: string): Promise<Instagra
     });
 
     const text = response.text;
-    if (!text) return getPlaceholders();
+    if (!text || text === '[]') {
+      console.log("Gemini returned no real data, using placeholders.");
+      return getPlaceholders();
+    }
     
-    return JSON.parse(text);
+    const data = JSON.parse(text);
+    console.log("Successfully fetched real Instagram data:", data);
+    return data;
   } catch (error) {
     console.error("Error fetching Instagram photos via Gemini:", error);
     return getPlaceholders();
