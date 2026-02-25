@@ -9,7 +9,7 @@ import InstagramFeed from './components/InstagramFeed';
 import Gallery from './components/Gallery';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 export default function App() {
   return (

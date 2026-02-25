@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Photo } from '../types';
 import { Maximize2, ChevronLeft, ChevronRight, X } from 'lucide-react';
 
@@ -59,11 +59,8 @@ export default function Gallery() {
           ))}
         </div>
 
-        <motion.div 
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          <AnimatePresence mode="popLayout">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <AnimatePresence>
             {filteredPhotos.map((photo) => (
               <motion.div
                 layout

@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Instagram, Heart, MessageCircle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { fetchInstagramPhotos, InstagramPost } from '../services/instagramService';
